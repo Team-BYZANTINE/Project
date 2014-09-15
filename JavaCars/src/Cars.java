@@ -7,7 +7,8 @@ public class Cars {
 
 	private Random randGenerator;
 	private Car nextCar;
-
+	public int time;
+	
 	public Cars() {
 		nextCar = createCars(Game.cars);
 	}
@@ -35,10 +36,14 @@ public class Cars {
 			x = 80;
 			break;
 		}
-		
 		Car b = new Car(x, y);
 		
-		return b;
+		if (c.equals(b)) {	
+			return b;
+		}
+	
+		return createCars(c);
+		
 		
 		//ArrayList<Car> carArray = new ArrayList<Car>();
 		//carArray.add(carX, carY);
@@ -48,6 +53,9 @@ public class Cars {
 		int boxSize = 20;
 		g.setColor(Color.green);
 		g.fillRect(nextCar.x, nextCar.y, boxSize, boxSize + 10);
+		nextCar.y++;
+		time++;
+		System.out.println(time);
 	}
 	public Car getNewCar(){
 		return nextCar;
