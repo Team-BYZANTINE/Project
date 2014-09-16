@@ -12,8 +12,8 @@ public class Car {
 		return "[x=" + x + ",y=" + y + "]";
 	}
 	public boolean equals(Object obj){
-		if(obj instanceof Box){
-			Box b = (Box) obj;
+		if(obj instanceof Car){
+			Car b = (Car) obj;
 			return (this.x == b.x && this.y == b.y);
 		}
 		return false;
