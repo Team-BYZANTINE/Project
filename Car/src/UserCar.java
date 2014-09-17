@@ -6,7 +6,7 @@ public class UserCar {
 	public int velX, velY;
 	
 	public UserCar() {
-		velX = 20;
+		velX = 120;
 		velY = 300;
 	}
 
@@ -18,7 +18,7 @@ public class UserCar {
 
 	public void tick() {
 		for (int i = 0;i<Game.cars2.size();i++) {
-			if (Game.cars2.get(i).x==velX && Game.cars2.get(i).y-30<=velY &&Game.cars2.get(i).y + 30 >=velY ) {
+			if (Game.cars2.get(i).x==velX && Game.cars2.get(i).y-30<=velY && Game.cars2.get(i).y + 30 >=velY ) {
 				Game.gameRunning = false;
 			}
 			
