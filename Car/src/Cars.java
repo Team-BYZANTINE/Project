@@ -25,28 +25,36 @@ public class Cars {
 			x = 0;
 			break;
 		case 1:
-			x = 40;
+			x = 20;
 			break;
 		case 2:
-			x = 80;
+			x = 40;
 			break;
 		case 3:
-			x = 120;
+			x = 60;
 			break;
 		case 4:
-			x = 160;
+			x = 80;
 		case 5:
-			x = 200;
+			x = 10;
 		case 6:
-			x = 240;
+			x = 120;
 			break;
 		case 7:
-			x = 280;
+			x = 140;
 			break;
 		case 8:
-			x = 320;
+			x = 160;
 		case 9:
-			x = 360;
+			x = 180;
+		case 10:
+			x = 200;
+		case 11:
+			x = 220;
+		case 12:
+			x = 240;
+		case 13:
+			x = 260;
 			break;
 		}
 		Car b = new Car(x, y);
