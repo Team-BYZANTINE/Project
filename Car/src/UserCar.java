@@ -24,6 +24,9 @@ public class UserCar {
 			}
 			if(Game.cars2.get(i).y == Game.HEIGHT - 40){
 				Game.score += 1;
+				if(Game.score %20 == 0){
+					Game.speed -= 10;
+				}
 			}	
 		}
 	}

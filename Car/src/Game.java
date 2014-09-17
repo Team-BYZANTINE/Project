@@ -70,7 +70,6 @@ public class Game extends Canvas implements Runnable {
 		g.clearRect(0, 0, WIDTH, HEIGHT);
 		userCar.drawUserCar(g);
 		
-		//cars.drawCars(g);
 		for (int i = 0;i<cars2.size();i++) {
 			cars2.get(i).drawCars(g);
 			
