@@ -17,11 +17,11 @@ public class Game extends Canvas implements Runnable {
 	public static UserCar userCar;
 	public static Cars cars;
 	int timer = 0;
+	int score = 0;
 	 
 
 	private Thread runThread;
 	private Graphics globalGraphics;
-	private String b;
 
 	static boolean gameRunning = false;
 
@@ -44,6 +44,7 @@ public class Game extends Canvas implements Runnable {
 		while (gameRunning) {
 			render(globalGraphics);
 			userCar.tick();
+			score += timer;
 			if(timer>30){
 				cars2.add(new Cars());
 				timer=0;
@@ -75,10 +76,18 @@ public class Game extends Canvas implements Runnable {
 			cars2.get(i).drawCars(g);
 			
 		}
-		}
+		this.drawScore(g);
+	}
+	
+	public void drawScore(Graphics g){
+		g.setColor(Color.white);
+		g.fillRect(0, 485, 350, 15);
+		g.setColor(Color.black);
+		g.drawString("Score = " + score/10, 10, 500);
+	}
+	
 	private void endGame(Graphics g){
 		g.setColor(Color.BLACK);
 		g.drawString("GAME OVER",Game.WIDTH/2-50, Game.HEIGHT/2-50);
 	}
 }
-
