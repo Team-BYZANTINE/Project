@@ -10,7 +10,7 @@ public class Cars {
 	private Car nextCar;
 	public int time;
 	int boxSize = 20;
-	int x = randGenerator.nextInt(5);
+	int x = randGenerator.nextInt(15);
 	int y = 0;
 	
 	public Cars() {
@@ -35,8 +35,10 @@ public class Cars {
 			break;
 		case 4:
 			x = 80;
+			break;
 		case 5:
 			x = 10;
+			break;
 		case 6:
 			x = 120;
 			break;
@@ -45,16 +47,28 @@ public class Cars {
 			break;
 		case 8:
 			x = 160;
+			break;
 		case 9:
 			x = 180;
+			break;
 		case 10:
 			x = 200;
+			break;
 		case 11:
 			x = 220;
+			break;
 		case 12:
 			x = 240;
+			break;
 		case 13:
 			x = 260;
+			break;
+		case 14:
+			x = 280;
+			break;
+		case 15:
+			x = 300;
+			
 			break;
 		}
 		Car b = new Car(x, y);
@@ -68,7 +82,7 @@ public class Cars {
 	}
 
 	public void drawCars(Graphics g) {
-		g.setColor(Color.green);
+		g.setColor(Color.BLACK);
 		g.fillRect(x, y, boxSize, boxSize + 10);
 		//System.out.println();
 	}

@@ -19,13 +19,13 @@ public class UserCar {
 	public void tick() {
 		for (int i = 0;i<Game.cars2.size();i++) {
 			if (Game.cars2.get(i).x==velX && Game.cars2.get(i).y-30<=velY &&Game.cars2.get(i).y + 30 >=velY ) {
-				System.out.println("TEST");
+				Game.gameRunning = false;
 			}
 			
 		}
 		//Game.userCar = new UserCar();
 		
-		//Game.gameRunning = false;
+		
 	}
 
 	public int getVelX() {

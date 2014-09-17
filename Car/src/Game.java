@@ -1,4 +1,5 @@
 import java.awt.Canvas;
+import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +12,7 @@ public class Game extends Canvas implements Runnable {
 	public static final int SIZE = 20;
 	public static final int WIDTH = COLS * SIZE;
 	public static final int HEIGHT = ROWS * SIZE;
-	public static int speed = 50;
+	public static int speed = 10;
 	public static List<Cars> cars2 = new ArrayList<Cars>();
 	public static UserCar userCar;
 	public static Cars cars;
@@ -62,6 +63,7 @@ public class Game extends Canvas implements Runnable {
 			}
 			timer++;
 		}
+		endGame(globalGraphics);
 	}
 
 	public void render(Graphics g) {
@@ -74,5 +76,9 @@ public class Game extends Canvas implements Runnable {
 			
 		}
 		}
+	private void endGame(Graphics g){
+		g.setColor(Color.BLACK);
+		g.drawString("GAME OVER",Game.WIDTH/2-50, Game.HEIGHT/2-50);
 	}
+}
 
