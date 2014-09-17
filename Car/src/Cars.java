@@ -8,9 +8,8 @@ public class Cars {
 	public static Random randGenerator = new Random();
 	private Car nextCar;
 	public int time;
-	int boxSize = 20;
-	int rand = randGenerator.nextInt(15);
-	int x = 0;
+	int boxSize = 40;
+	int x = randGenerator.nextInt(5);
 	int y = 0;
 	
 	public Cars() {
@@ -18,19 +17,37 @@ public class Cars {
 	}
 	
 	public Car createCars(Cars c) {
-		x = rand * 20;
+
+
+		switch (x) {
+		case 0:
+			x = 70;
+			break;
+		case 1:
+			x = 115;
+			break;
+		case 2:
+			x = 160;
+			break;
+		case 3:
+			x = 205;
+			break;
+		case 4:
+			x = 250;
+			break;
+		}
 		Car b = new Car(x, y);
-		return b;
+		
+			return b;
 	}
 	
 	public void update(){
-		y+=1;
+		y+=4;
 	}
 
 	public void drawCars(Graphics g) {
-		g.setColor(Color.BLACK);
-		g.fillRect(x, y, boxSize, boxSize + 10);
-		//System.out.println();
+		g.setColor(Color.black);
+		g.fillRect(x, y, boxSize, boxSize + 20);
 	}
 	
 	public Car getNewCar(){

@@ -6,26 +6,26 @@ public class UserCar {
 	public int velX, velY;
 	
 	public UserCar() {
-		velX = 120;
-		velY = 300;
+		velX = 160;
+		velY = 400;
 	}
 
 	public void drawUserCar(Graphics g) {
-			int boxSize = 20;
+			int boxSize = 40;
 			g.setColor(Color.red);
-			g.fillRect(velX, velY, boxSize, boxSize + 10);
+			g.fillRect(velX, velY, boxSize, boxSize + 20);
 	}
 
 	public void tick() {
 		for (int i = 0;i<Game.cars2.size();i++) {
-			if (Game.cars2.get(i).x==velX && Game.cars2.get(i).y-30<=velY && Game.cars2.get(i).y + 30 >=velY ) {
+			if (Game.cars2.get(i).x==velX && Game.cars2.get(i).y - 60 < velY &&Game.cars2.get(i).y + 60 > velY) {
+
 				Game.gameRunning = false;
 			}
-			
+			if(Game.cars2.get(i).y == Game.HEIGHT - 40){
+				Game.score += 1;
+			}	
 		}
-		//Game.userCar = new UserCar();
-		
-		
 	}
 
 	public int getVelX() {
