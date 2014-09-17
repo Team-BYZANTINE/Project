@@ -7,7 +7,7 @@ public class UserCar {
 	
 	public UserCar() {
 		velX = 20;
-		velY = 200;
+		velY = 300;
 	}
 
 	public void drawUserCar(Graphics g) {
