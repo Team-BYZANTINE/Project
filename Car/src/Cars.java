@@ -1,6 +1,5 @@
 import java.awt.Color;
 import java.awt.Graphics;
-import java.util.ArrayList;
 import java.util.Random;
 
 public class Cars {
@@ -10,7 +9,8 @@ public class Cars {
 	private Car nextCar;
 	public int time;
 	int boxSize = 20;
-	int x = randGenerator.nextInt(15);
+	int rand = randGenerator.nextInt(15);
+	int x = 0;
 	int y = 0;
 	
 	public Cars() {
@@ -18,65 +18,11 @@ public class Cars {
 	}
 	
 	public Car createCars(Cars c) {
-
-
-		switch (x) {
-		case 0:
-			x = 0;
-			break;
-		case 1:
-			x = 20;
-			break;
-		case 2:
-			x = 40;
-			break;
-		case 3:
-			x = 60;
-			break;
-		case 4:
-			x = 80;
-			break;
-		case 5:
-			x = 10;
-			break;
-		case 6:
-			x = 120;
-			break;
-		case 7:
-			x = 140;
-			break;
-		case 8:
-			x = 160;
-			break;
-		case 9:
-			x = 180;
-			break;
-		case 10:
-			x = 200;
-			break;
-		case 11:
-			x = 220;
-			break;
-		case 12:
-			x = 240;
-			break;
-		case 13:
-			x = 260;
-			break;
-		case 14:
-			x = 280;
-			break;
-		case 15:
-			x = 300;
-			
-			break;
-		}
+		x = rand * 20;
 		Car b = new Car(x, y);
-		
-		
-			return b;
-		
+		return b;
 	}
+	
 	public void update(){
 		y+=1;
 	}
@@ -86,11 +32,8 @@ public class Cars {
 		g.fillRect(x, y, boxSize, boxSize + 10);
 		//System.out.println();
 	}
+	
 	public Car getNewCar(){
-		
-			
-			
-		
 		return nextCar;
 	}
 }
