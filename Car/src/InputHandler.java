@@ -12,12 +12,12 @@ public class InputHandler implements KeyListener {
 		int keyCode = e.getKeyCode();
 		
 		// right x = 1, y = 0
-		if (keyCode == KeyEvent.VK_RIGHT && Game.userCar.velX <= 205) {
-			Game.userCar.velX += 45;
+		if (keyCode == KeyEvent.VK_RIGHT && Game.userCar.velX <= 240) {
+			Game.userCar.velX += 55;
 		}
 		// left x = -1, y = 0
-		else if (keyCode == KeyEvent.VK_LEFT && Game.userCar.velX >= 105) {
-			Game.userCar.velX -= 45;
+		else if (keyCode == KeyEvent.VK_LEFT && Game.userCar.velX >= 95) {
+			Game.userCar.velX -= 55;
 		}
 		if (keyCode == KeyEvent.VK_ESCAPE) {
 			System.exit(0);
