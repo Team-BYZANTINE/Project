@@ -13,7 +13,7 @@ public class Game extends Canvas implements Runnable {
 	public static final int SIZE = 20;
 	public static final int WIDTH = COLS * SIZE;
 	public static final int HEIGHT = ROWS * SIZE;
-	public static int speed = 50;
+	public static int speed = 30;
 	public static List<Cars> cars2 = new ArrayList<Cars>();
 	public static UserCar userCar;
 	public static Cars cars;
