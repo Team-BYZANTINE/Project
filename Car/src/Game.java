@@ -87,10 +87,10 @@ public class Game extends Canvas implements Runnable {
 		drawRoad(globalGraphics);
 		drawScore(globalGraphics);
 		g.setColor(Color.white);
-		g.fillRect(92, 0, 11, 20);
-		g.fillRect(147, 0, 11, 20);
-		g.fillRect(202, 0, 11, 20);
-		g.fillRect(257, 0, 11, 20);
+		g.fillRect(92, 0, 11, 5);
+		g.fillRect(147, 0, 11, 5);
+		g.fillRect(202, 0, 11, 5);
+		g.fillRect(257, 0, 11, 5);
 	}
 	
 	public void drawRoad(Graphics g){
