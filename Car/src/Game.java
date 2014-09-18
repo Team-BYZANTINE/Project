@@ -2,8 +2,6 @@ import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,8 +22,6 @@ public class Game extends Canvas implements Runnable {
 	int timer = 0;
 	public static int speedTimer = 16;
 	public static  int score;
-	
-	private Image img = Toolkit.getDefaultToolkit().createImage("background2.jpg");
 
 	private Thread runThread;
 	private Graphics globalGraphics;

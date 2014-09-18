@@ -18,13 +18,14 @@ public class UserCar {
 
 	public void tick() {
 		for (int i = 0;i<Game.cars2.size();i++) {
-<<<<<<< HEAD
+
 			if (Game.cars2.get(i).x==velX && Game.cars2.get(i).y - 60 < velY && Game.cars2.get(i).y + 60 > velY) {
-=======
+
 			if (Game.cars2.get(i).x==velX && Game.cars2.get(i).y < velY &&Game.cars2.get(i).y + 50 > velY) {
->>>>>>> 615f72402f15d50a3240aefe0c83a9c0ff830fd8
+
 
 				Game.gameRunning = false;
+			}
 			}
 			if(Game.cars2.get(i).y == Game.HEIGHT - 40){
 				Game.score += 1;
