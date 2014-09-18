@@ -8,7 +8,7 @@ public class Cars {
 	public static Random randGenerator = new Random();
 	private Car nextCar;
 	public int time;
-	int boxSize = 40;
+	int boxSize = 30;
 	int x = randGenerator.nextInt(5);
 	int y = 0;
 	
@@ -21,25 +21,27 @@ public class Cars {
 
 		switch (x) {
 		case 0:
-			x = 70;
+			x = 55;
 			break;
 		case 1:
-			x = 115;
+			x = 110;
 			break;
 		case 2:
-			x = 160;
+			x = 165;
 			break;
 		case 3:
-			x = 205;
+			x = 220;
 			break;
 		case 4:
-			x = 250;
+			x = 275;
 			break;
 		}
 		Car b = new Car(x, y);
 		
 			return b;
 	}
+	
+	
 	
 	public void update(){
 		y+=4;

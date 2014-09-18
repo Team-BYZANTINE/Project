@@ -2,6 +2,8 @@ import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,11 +17,15 @@ public class Game extends Canvas implements Runnable {
 	public static final int HEIGHT = ROWS * SIZE;
 	public static int speed = 30;
 	public static List<Cars> cars2 = new ArrayList<Cars>();
+	public static List<Lanes> lanes2 = new ArrayList<Lanes>();
 	public static UserCar userCar;
 	public static Cars cars;
+	public static Lanes lanes;
 	int timer = 0;
 	public static int speedTimer = 16;
 	public static  int score;
+	
+	private Image img = Toolkit.getDefaultToolkit().createImage("background2.jpg");
 
 	private Thread runThread;
 	private Graphics globalGraphics;
@@ -39,6 +45,7 @@ public class Game extends Canvas implements Runnable {
 	public Game() {
 		userCar = new UserCar();
 		cars = new Cars();
+		lanes = new Lanes();
 		score = 0;
 	}
 
@@ -49,10 +56,12 @@ public class Game extends Canvas implements Runnable {
 
 			if(timer>speedTimer){
 				cars2.add(new Cars());
+				lanes2.add(new Lanes());
 				timer=0;
 			}
 			for (int i = 0;i<cars2.size();i++) {
 				cars2.get(i).update();
+				lanes2.get(i).update();
 				
 			}
 			try {
@@ -72,10 +81,25 @@ public class Game extends Canvas implements Runnable {
 		
 		for (int i = 0;i<cars2.size();i++) {
 			cars2.get(i).drawCars(g);
+			lanes2.get(i).drawLanes(g);
 			
 		}
+		drawRoad(globalGraphics);
 		drawScore(globalGraphics);
+		g.setColor(Color.white);
+		g.fillRect(92, 0, 11, 20);
+		g.fillRect(147, 0, 11, 20);
+		g.fillRect(202, 0, 11, 20);
+		g.fillRect(257, 0, 11, 20);
 	}
+	
+	public void drawRoad(Graphics g){
+		g.setColor(Color.white);
+		g.fillRect(35, 0, 15, Game.WIDTH + 100);
+		g.setColor(Color.white);
+		g.fillRect(310, 0, 15, Game.WIDTH + 100);
+	}
+	
 	public void drawScore(Graphics g){
 		g.setColor(Color.darkGray);
 		g.fillRect(0, Game.HEIGHT - 40, Game.WIDTH, 40);
